@@ -11,3 +11,11 @@ Another example could be:
 
 { name: "Gelato", countryOfOrigin: "Italy", flavor: "Chocolate Chip" }
 */
+
+var favoriteDessert = function() {
+	return {
+		name : "Custard",
+		prepTime: "25 minutes + 2 hours chilling",
+		countryOfOrigin: "England"
+	}
+}
