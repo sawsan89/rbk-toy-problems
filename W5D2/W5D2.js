@@ -2,7 +2,7 @@
 1-Write a function called tallEnoughToRide  that takes an array of people objects, 
 and returns a an array of names of people who are greater than or equal to 48 inches in height.
 
-You can assume an input which looks like this:
+You can assume an input which looks like this:*/
 
 var groupA = [
   {
@@ -26,7 +26,7 @@ var groupA = [
     heightInInches: 48
   }
 ]
-Calling your function should result in:
+/*Calling your function should result in:
 tallEnoughToRide(groupA); //["Mia", "Kiana", "Alex"];
 
 Remember: your function should work off of the data it receives, 
@@ -35,7 +35,14 @@ I.e. If someone called your function with 10 objects
 (with all safely have the same properties), it should work just as well.
 */
 
-// your answer is here
+var tallEnoughToRide = function(array) {
+	var arr = []; //array to keep elements value in
+	return filter(array, function(element) {
+		if (element.heightInInches >= 48){ //comparision value
+			 arr.push(element.name)
+		} return arr;
+	});
+};
 
 /*
 2-Working off of the same data structure as tallEnoughToRide, 
@@ -47,7 +54,14 @@ Calling your function should result in:
 
 tallestPerson(groupA); //"Kiana at 55 inches"
 
-
 */
 
 // your answer is here
+
+var tallestPerson = function(array) {
+	return reduce(array, function(max,element){
+		if(element.heightInInches > max){
+			max = element.heightInInches;
+		} return max;
+	});
+};
