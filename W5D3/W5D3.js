@@ -37,3 +37,12 @@ orderAVegetarianDish(staffA); //true
 */
 
 // your answer is here 
+
+var orderAVegetarianDish = function(array) { 
+	return reduce(array,function(result,element){ //This code will give true if all vegeterians, i need to rethinkmy solution
+		if (element.mealPreferences === "vegetarian"){
+			result = true;
+		} else {result = false};
+		return result;
+	});
+};
