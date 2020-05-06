@@ -49,13 +49,22 @@ var shoppingList = [
 ];
 Calling your function should result in:
 
-shoppingSummary(shoppingList); //"I got 3 items at $99.73"
+shoppingSummary(shoppingList); //"I got 3 items at $99.73"*/
 
-
+var shoppingSummary = function(list) {
+	var items = 0; // empty counter for the items
+	var coast = 0; //the summation of spendings
+	var budget = 100; //my budget
+	for (var i = 0; i < list.length; i++) {
+		if ((100 - (coast + list[i].price)) >= 0 ) {
+			items++;
+			coast = coast + list[i].price;
+		};
+	};
+	return "I got " + items.toString() + " at $" + coast.toString();
+};
 
 /*
-
-
 Exercise 2
 Suppose that you wanted to take out the most expensive item on your shopping list. 
 Write a function called removeMostExpensive 
@@ -98,3 +107,21 @@ Would return a new array with the following elements:
 
 //your answer is here
 
+var removeMostExpensive = function(list) {
+	var arr = []; // array for not the most expensive
+	var comp = ""; // most expensive name
+	var most = 0; //the most expensive
+	for (var i = 0; i < list.length; i++) { // loop to find most expensive
+		if ((most < list[i].price) >= 0 ) {
+			most = list[i].price;
+			comp = list[i].item;
+			arr.push(list[i]);
+		};
+	};
+	for (var i = 0; i < arr.length; i++) { // loop to remove mot expensive
+		if ((comp === arr[i].item) >= 0 ) {
+			arr.splice(i, 1);
+		};
+	};
+	return arr;
+};
